@@ -10,10 +10,11 @@ function removeBook(index){
 
 const add = document.querySelector('#add');
 
-add.addEventListener('onclick', () => {
-  title = document.querySelector('#title');
-  author = document. querySelector('#author');
-  addBook(title, author);
+add.addEventListener('click', (e) => {
+  e.preventDefault();
+  t = document.querySelector('#title').value;
+  a = document. querySelector('#author').value;
+  addBook(t, a);
 });
 
 //local storage
