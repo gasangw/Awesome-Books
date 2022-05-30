@@ -1,10 +1,11 @@
 let books = [];
-console.log('INITINALIZED', books);
 
 function addBook(title, author){
-  console.log("function called")
   books.push({title, author});
-  console.log("book added", books);
+}
+
+function removeBook(index){
+  books = books.filter((element) => element !== books[index]);
 }
 
 const add = document.querySelector('#add');
