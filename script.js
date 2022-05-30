@@ -16,7 +16,12 @@ add.addEventListener('onclick', () => {
   addBook(title, author);
 });
 
-/// local storage
-// const title = document.querySelector('#title');
-// const author = document. querySelector('#author');
-// const saver = JSON.stringify({ title, author});
+//local storage
+const title = document.querySelector('#title');
+const author = document. querySelector('#author');
+const saver = JSON.stringify({ title, author});
+localStorage.setItem('object', saver);
+
+
+
+
