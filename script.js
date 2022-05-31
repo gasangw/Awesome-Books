@@ -1,9 +1,21 @@
+/* eslint-disable no-unused-vars */
 let books = [];
+
+// retrieve saved books
+function retrieve() {
+  const data = JSON.parse(localStorage.getItem('aboutBook'));
+  if (data) {
+    books = JSON.parse(localStorage.getItem('aboutBook'));
+  }
+}
+retrieve();
+
+const main = document.querySelector('.books');
 
 function addBook(enteredTitle, enteredAuthor) {
   books.push({ title: enteredTitle, author: enteredAuthor });
 }
-
+// Dsiplay books
 function show(index) {
   const bookName = books[index].title;
   const authorName = books[index].author;
@@ -24,8 +36,19 @@ for (let i = 0; i < books.length; i += 1) {
   show(i);
 }
 
-function removeBook(index){
-  books = books.filter((element) => element !== books[index]);
+function removeBook(item) {
+  // Get saved books
+  retrieve();
+  // Remove book
+  books = books.filter((element) => element !== books[item.getAttribute('data-id')]);
+  // Update books
+  localStorage.setItem('aboutBook', JSON.stringify(books));
+  // Initialize screen
+  main.innerHTML = '';
+  // Display books
+  for (let i = 0; i < books.length; i += 1) {
+    show(i);
+  }
 }
 
 const add = document.querySelector('#add');
@@ -43,19 +66,7 @@ add.addEventListener('click', (e) => {
   show(books.length - 1);
 });
 
-//local storage
-const title = document.querySelector('#title');
-const author = document. querySelector('#author');
-const saver = JSON.stringify(books);
-localStorage.setItem('object', saver);
-
 // add DOM elements
-const form = document.querySelector('#form');
-const titleInput = document.querySelector('#title');
-const authorInput = document.querySelector('#author');
-
-
-
-
-
-
+// const form = document.querySelector('#form');
+// const titleInput = document.querySelector('#title');
+// const authorInput = document.querySelector('#author');
