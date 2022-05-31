@@ -65,8 +65,3 @@ add.addEventListener('click', (e) => {
 
   show(books.length - 1);
 });
-
-// add DOM elements
-// const form = document.querySelector('#form');
-// const titleInput = document.querySelector('#title');
-// const authorInput = document.querySelector('#author');
