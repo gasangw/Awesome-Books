@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', See.displayBooks);
 //adding a book
 document.querySelector('#form').addEventListener('submit', (e)=>{
     e.preventDefault();
-const title = document.querySelector('#title').value
-const author = document.querySelector('#author').value
+    const title = document.querySelector('#title').value
+    const author = document.querySelector('#author').value
 
 //instatiate new book
 const book = new Book(title, author);
