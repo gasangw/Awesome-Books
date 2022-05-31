@@ -23,6 +23,13 @@ const author = document. querySelector('#author');
 const saver = JSON.stringify(books);
 localStorage.setItem('object', saver);
 
+// add DOM elements
+const form = document.querySelector('#form');
+const titleInput = document.querySelector('#title');
+const authorInput = document.querySelector('#author');
+
+
+
 
 
 
