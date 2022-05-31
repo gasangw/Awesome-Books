@@ -1,7 +1,27 @@
 let books = [];
 
-function addBook(title, author){
-  books.push({title, author});
+function addBook(enteredTitle, enteredAuthor) {
+  books.push({ title: enteredTitle, author: enteredAuthor });
+}
+
+function show(index) {
+  const bookName = books[index].title;
+  const authorName = books[index].author;
+
+  const book = document.createElement('div');
+  book.innerHTML = '';
+  book.innerHTML = `
+      ${bookName}
+      <br>
+      ${authorName}
+      <br>
+      <button type='button' class="remove" data-id=${index} onclick="removeBook(this)">Remove</button>
+      <hr>`;
+  main.appendChild(book);
+}
+
+for (let i = 0; i < books.length; i += 1) {
+  show(i);
 }
 
 function removeBook(index){
@@ -12,9 +32,15 @@ const add = document.querySelector('#add');
 
 add.addEventListener('click', (e) => {
   e.preventDefault();
-  t = document.querySelector('#title').value;
-  a = document. querySelector('#author').value;
+
+  const t = document.querySelector('#title').value;
+  const a = document.querySelector('#author').value;
   addBook(t, a);
+
+  // update local storage
+  localStorage.setItem('aboutBook', JSON.stringify(books));
+
+  show(books.length - 1);
 });
 
 //local storage
