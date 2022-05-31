@@ -5,14 +5,15 @@
 }
 
 h3 {
-  
+
   text-align: center;
 }
 
 .books {
   border: 2px solid rgb(22,22,22);
-  padding: 5%;
+  padding: 1%;
   margin: 1%;
+  width: 50%;
 }
 
 body {
@@ -21,3 +22,5 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+
