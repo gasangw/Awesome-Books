@@ -23,7 +23,7 @@ class See {
     }
 
     static addBookToList(book) {
-        const list = document.querySelector('#listOfBooks');
+        const list = document.querySelector('.books');
         const row = document.createElement('tr');
           row.innerHTML = `
            <td>${book.title}</td>
