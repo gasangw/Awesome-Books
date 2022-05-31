@@ -4,8 +4,20 @@
   box-sizing: border-box;
 }
 
+h3 {
+  
+  text-align: center;
+}
+
 .books {
   border: 2px solid rgb(22,22,22);
   padding: 5%;
   margin: 1%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

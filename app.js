@@ -28,7 +28,7 @@ class See {
           row.innerHTML = `
            <td>${book.title}</td>
            <td>${book.author}</td>
-           <td><a href="#">Remove</a></td>
+           <td><button> <a href="#">Remove</a></button></td>
           `;
           list.appendChild(row);
      }
