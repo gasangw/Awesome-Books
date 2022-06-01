@@ -6,23 +6,18 @@ class Book {
 }
 
 class See {
-    static displayBooks() {
-        const book1 = new Book('book one', 'John kevin');
-        const book2 = new Book('book two', 'Thomas  kevin');
-        
-       const books = [book1, book2];
-
-
-     books.forEach((book)=> See.addBookToList(book));
+    static displayAll() {
+        const list = See.get();
+        if(list){
+            list.forEach((book)=> See.display(book));
+        }
     }
-
     static removeBook(book){
         if(book) {
             book.parentElement.parentElement.parentElement.remove();
         }
     }
-
-    static addBookToList(book) {
+    static display(book) {
         const list = document.querySelector('.books');
         const row = document.createElement('tr');
           row.innerHTML = `
@@ -31,26 +26,41 @@ class See {
            <td><button class="delete"> <a href="#">Remove</a></button></td>`;
            list.appendChild(row);
     }
+
+      static get() {
+        let list;
+        let data = localStorage.getItem('memory')
+        if(!data) {
+          list = [];
+        } else {
+          list = JSON.parse(data);
+        }
+        return list;
+      }
+    
+      static add(book) {
+        const list = See.get();
+        list.push(book);
+        localStorage.setItem('memory', JSON.stringify(list));
+      }
 }
 
-document.addEventListener('DOMContentLoaded', See.displayBooks);
+// display existing books
+document.addEventListener('DOMContentLoaded', See.displayAll);
 
-//adding a book
+// adding a book
 document.querySelector('#form').addEventListener('submit', (e)=>{
     e.preventDefault();
     const title = document.querySelector('#title').value
     const author = document.querySelector('#author').value
 
-//instatiate new book
-const book = new Book(title, author);
+    const book= new Book(title, author);
 
-//add book to see
-
-See.addBookToList(book); 
-
+    See.display(book);
+    See.add(book);
 });
 
+// removing a book
 document.querySelector('.books').addEventListener('click', (e) => {
-    // Remove book
     See.removeBook(e.target);
-  });
+});
