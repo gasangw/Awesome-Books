@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 class Book {
     constructor(inputTitle, inputAuthor){
         this.title = inputTitle;
@@ -43,9 +44,19 @@ class See {
         list.push(book);
         localStorage.setItem('memory', JSON.stringify(list));
       }
+    
+      static delete(title) {
+        const list = See.get();
+    
+        list.forEach((book, index) => {
+          if(book.title === title) {
+            list.splice(index, 1);
+          }
+        });
+        localStorage.setItem('memory', JSON.stringify(list));
+      }
 }
 
-// display existing books
 document.addEventListener('DOMContentLoaded', See.displayAll);
 
 // adding a book
@@ -63,4 +74,6 @@ document.querySelector('#form').addEventListener('submit', (e)=>{
 // removing a book
 document.querySelector('.books').addEventListener('click', (e) => {
     See.removeBook(e.target);
+    const title = e.target.parentElement.parentElement.previousElementSibling.previousElementSibling.textContent;
+    See.delete(title);
 });
