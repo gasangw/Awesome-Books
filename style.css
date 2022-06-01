@@ -57,7 +57,6 @@ header {
 .contact {
   margin: 0 auto;
   max-width: 700px;
-  border: 2px solid red;
 }
 
 .contact h1 {
@@ -74,8 +73,13 @@ header {
 
 .copy .copyright {   /*changed the footer class Copright to copyright */
   padding: 12px 24px; 
-  font-size: 23px;
+  font-size: 25px;
   border: 1px solid black;
-  display: flex;
-  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.copyright small {
+  text-align: center;
+  display: block;
 }
