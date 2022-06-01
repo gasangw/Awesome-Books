@@ -64,3 +64,18 @@ header {
   text-align: center;
 }
 
+/* FOOTER */
+.copy {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+}
+
+.copy .copyright {   /*changed the footer class Copright to copyright */
+  padding: 12px 24px; 
+  font-size: 23px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+}
