@@ -1,12 +1,9 @@
-/* eslint-disable max-classes-per-file */
-class Book {
+class See {
   constructor(inputTitle, inputAuthor) {
     this.title = inputTitle;
     this.author = inputAuthor;
   }
-}
-
-class See {
+  
   static displayAll() {
     const list = See.get();
     if (list) {
@@ -67,7 +64,7 @@ document.querySelector('#form').addEventListener('submit', (e) => {
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
 
-  const book = new Book(title, author);
+  const book = new See(title, author);
 
   See.display(book);
   See.add(book);
