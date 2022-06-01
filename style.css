@@ -1,6 +1,4 @@
-
-html {
-  scroll-behavior: smooth;
+body {
   font-family: sans-serif;
 }
 
@@ -53,5 +51,11 @@ header {
 
 .link.link--active {
   color: rgb(45, 100, 243);
+}
+
+/* CONTACT SECTION */
+.contact {
+  margin: 0 auto;
+  max-width: 650px;
 }
 
