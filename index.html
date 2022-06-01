@@ -4,14 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Awesome Books</title>
+    <title>A complete website with navigation</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <h1>Awesome Books</h1>
-   <form method="post">
-       <input type="text" name="title" placeholder="Title" required><br><br>
-       <input type="text" name="author" placeholder="Author" required><br><br>
-       <input type="submit" value="Add" required>
-    </form>
+    <header>
+        <nav class="navbar">
+            <h2><a href="#">Awesome Books</a></h2>
+            <ul class="link">
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Add new</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <span id="date"></span>
+    </header>
+
+  <div class="main">
+    <section class="display">
+        <h1>All awesome books</h1>
+        <div class="books">
+
+        </div>
+    </section><br>
+    <section>
+        <form id="form" method="post">
+            <input type="text" id="title" name="title" placeholder="Title" required><br><br>
+            <input type="text" id="author" name="author" placeholder="Author" required><br><br>
+            <input type="submit" value="Add" id="submit">
+        </form>
+    </section>
+    <section class="contact">
+        <div>
+           <h1>Contact information</h1>
+           <p>Do you have any questions or you just want to say "hello"? You can reach out to us!</p>
+           <ul>
+               <li>Our email: thomas@gmail.com gabenge@gmail.com farida@gmail.com</li>
+               <li>Our phone number: 0807008673</li>
+               <li>Our address: Streetname Romaniroro, 427130, Country Romania</li>
+           </ul>
+        </div>
+    </section>
+    </div>
+    <footer class="copy">
+        <div class="Copright">
+          <small>Copyright: Created by Farida, Thomas and Gbenga</small>
+        </div>
+      </footer>
+
+      <script src="app.js"></script>
 </body>
 </html>
