@@ -59,6 +59,10 @@ header {
   max-width: 700px;
 }
 
+.contact ul li {
+  margin-top: 5px;
+}
+
 .contact h1 {
   text-align: center;
 }
