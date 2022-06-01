@@ -1,16 +1,9 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 h3 {
-
   text-align: center;
 }
 
 .books {
-  border: 2px solid rgb(22,22,22);
+  border: 2px solid rgb(22, 22, 22);
   padding: 1%;
   margin: 1%;
   width: 50%;
@@ -23,4 +16,15 @@ body {
   align-items: center;
 }
 
+tr {
+  display: flex;
+  justify-content: flex-start;
+}
 
+.delete {
+  margin-left: auto;
+}
+
+hr {
+  width: 20%;
+}
