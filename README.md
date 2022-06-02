@@ -3,7 +3,6 @@
 # Awesome books
 >"Awesome books" is a simple website that displays a list of books and allows you to add and remove books from that list. By building this application, we learn how to manage data using JavaScript. Thanks to that our website will be more interactive. You  also use a medium-fidelity wireframe to build the UI.
 
-
 ## Built With
 
 - HTML
@@ -21,13 +20,16 @@ Use any platform with html, css, and JavaScript. To buils this project, I used V
 ## Authors
 
 👤 **Gasangwa Thomas**
+
+
 - GitHub: [@gasangw](https://github.com/gasangw)
 
 👤 **Oyewunmi Kelvin Gbenga**
+
 - GitHub: [@kelomo2502](https://github.com/kelomo2502)
 
-
 👤 **Farida Hamid**
+
 - GitHub: [@Farida-Hamid](https://github.com/Farida-Hamid)
 
 ## 🤝 Contributing
@@ -42,4 +44,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](https://github.com/microverseinc/readme-template/blob/master/MIT.md) licensed.
