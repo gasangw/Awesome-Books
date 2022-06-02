@@ -57,9 +57,10 @@ class See {
 }
 
 document.addEventListener('DOMContentLoaded', See.displayAll);
+document.addEventListener('DOMContentLoaded', showBookList);
 
 // adding a book
-document.querySelector('#form').addEventListener('submit', (e) => {
+document.querySelector('form').addEventListener('submit', (e) => {
   e.preventDefault();
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
@@ -71,8 +72,27 @@ document.querySelector('#form').addEventListener('submit', (e) => {
 });
 
 // removing a book
-document.querySelector('.books').addEventListener('click', (e) => {
+document.querySelectorAll('.books').addEventListener('click', (e) => {
   See.removeBook(e.target);
   const writer = e.target.previousElementSibling.textContent;
   See.delete(writer);
 });
+
+// Adding the correct section
+function showBookList(){
+    document.getElementById('id1').style.visibility = "visible";
+    document.getElementById('id2').style.visibility = "hidden";
+    document.getElementById('id3').style.visibility = "hidden";
+}
+
+function showForm(){
+    document.getElementById('id1').style.visibility = "hidden";
+    document.getElementById('id2').style.visibility = "visible";
+    document.getElementById('id3').style.visibility = "hidden";
+}
+
+function showContact(){
+    document.getElementById('id1').style.visibility = "hidden";
+    document.getElementById('id2').style.visibility = "hidden";
+    document.getElementById('id3').style.visibility = "visible";
+}

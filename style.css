@@ -89,8 +89,8 @@ h2 {
 
 .books {
   border: 2px solid rgb(22, 22, 22);
-  padding: 1%;
-  margin: 1%;
+  padding: 2%;
+  margin: auto;
 }
 
 tr {
@@ -104,4 +104,8 @@ tr {
 form {
   width: fit-content;
   margin: auto;
+}
+
+.main {
+  width: 70%;
 }
