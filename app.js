@@ -23,7 +23,7 @@ class See {
     row.innerHTML = `
            <td>"${book.title}"</td>&nbspby &nbsp
            <td>${book.author}</td>
-           <button class="delete">Remove</button>`;
+           <button class="cancel">Remove</button>`;
     list.appendChild(row);
   }
 
@@ -57,7 +57,6 @@ class See {
 }
 
 document.addEventListener('DOMContentLoaded', See.displayAll);
-document.addEventListener('DOMContentLoaded', showBookList);
 
 // adding a book
 document.querySelector('form').addEventListener('submit', (e) => {
@@ -72,27 +71,31 @@ document.querySelector('form').addEventListener('submit', (e) => {
 });
 
 // removing a book
-document.querySelectorAll('.books').addEventListener('click', (e) => {
-  See.removeBook(e.target);
+document.querySelector('.books').addEventListener('click', (e) => {
+  See.removeBook(e.target.previousElementSibling);
   const writer = e.target.previousElementSibling.textContent;
   See.delete(writer);
 });
 
 // Adding the correct section
-function showBookList(){
-    document.getElementById('id1').style.visibility = "visible";
-    document.getElementById('id2').style.visibility = "hidden";
-    document.getElementById('id3').style.visibility = "hidden";
+/* eslint-disable no-unused-vars */
+
+function showBookList() {
+  document.getElementById('id1').style.display = 'block';
+  document.getElementById('id2').style.display = 'none';
+  document.getElementById('id3').style.display = 'none';
 }
 
-function showForm(){
-    document.getElementById('id1').style.visibility = "hidden";
-    document.getElementById('id2').style.visibility = "visible";
-    document.getElementById('id3').style.visibility = "hidden";
+function showForm() {
+  document.getElementById('id1').style.display = 'none';
+  document.getElementById('id2').style.display = 'block';
+  document.getElementById('id3').style.display = 'none';
 }
 
-function showContact(){
-    document.getElementById('id1').style.visibility = "hidden";
-    document.getElementById('id2').style.visibility = "hidden";
-    document.getElementById('id3').style.visibility = "visible";
+function showContact() {
+  document.getElementById('id1').style.display = 'none';
+  document.getElementById('id2').style.display = 'none';
+  document.getElementById('id3').style.display = 'block';
 }
+
+document.addEventListener('DOMContentLoaded', showBookList);

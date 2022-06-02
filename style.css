@@ -97,13 +97,17 @@ tr {
   display: flex;
 }
 
-.delete {
+.cancel {
   margin-left: auto;
 }
 
 form {
   width: fit-content;
   margin: auto;
+}
+
+.done {
+  margin-left: 110px;
 }
 
 .main {
