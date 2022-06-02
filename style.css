@@ -1,11 +1,13 @@
 body {
   font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header {
   text-align: center;
 }
-
 
 .navbar {
   display: flex;
@@ -45,10 +47,6 @@ header {
   color: black;
 }
 
-.navbar h2 {
-  padding-left: 40px;
-}
-
 .link.link--active {
   color: rgb(45, 100, 243);
 }
@@ -63,7 +61,8 @@ header {
   margin-top: 5px;
 }
 
-.contact h1 {
+h1,
+h2 {
   text-align: center;
 }
 
@@ -75,8 +74,8 @@ header {
   bottom: 30px;
 }
 
-.copy .copyright {   /*changed the footer class Copright to copyright */
-  padding: 12px 24px; 
+.copy .copyright {
+  padding: 12px 24px;
   font-size: 25px;
   border: 1px solid black;
   max-width: 800px;
@@ -86,4 +85,23 @@ header {
 .copyright small {
   text-align: center;
   display: block;
+}
+
+.books {
+  border: 2px solid rgb(22, 22, 22);
+  padding: 1%;
+  margin: 1%;
+}
+
+tr {
+  display: flex;
+}
+
+.delete {
+  margin-left: auto;
+}
+
+form {
+  width: fit-content;
+  margin: auto;
 }

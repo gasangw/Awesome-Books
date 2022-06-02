@@ -1,55 +1,78 @@
-class Book {
-    constructor(inputTitle, inputAuthor){
-        this.title = inputTitle;
-        this.author = inputAuthor;
-    }
-}
-
-
 class See {
-    static displayBooks() {
-        const book1 = new Book('book one', 'John kevin');
-        const book2 = new Book('book two', 'Thomas  kevin');
-        
-       let books = [book1, book2];
-     books.forEach((book)=> See.addBookToList(book));
-    
-    }
-    
-    static removeBook(book){
-        if(book) {
-            book.parentElement.parentElement.parentElement.remove();
-        }
-    }
+  constructor(inputTitle, inputAuthor) {
+    this.title = inputTitle;
+    this.author = inputAuthor;
+  }
 
-    static addBookToList(book) {
-        const list = document.querySelector('.books');
-        const row = document.createElement('tr');
-          row.innerHTML = `
-           <td>${book.title}</td> by
-           <td>${book.author}</td>
-           <td><button class="delete"> <a href="#">Remove</a></button></td>`;
-           list.appendChild(row);
+  static displayAll() {
+    const list = See.get();
+    if (list) {
+      list.forEach((book) => See.display(book));
     }
+  }
+
+  static removeBook(book) {
+    if (book) {
+      book.parentElement.remove();
+    }
+  }
+
+  static display(book) {
+    const list = document.querySelector('.books');
+    const row = document.createElement('tr');
+    row.innerHTML = `
+           <td>"${book.title}"</td>&nbspby &nbsp
+           <td>${book.author}</td>
+           <button class="delete">Remove</button>`;
+    list.appendChild(row);
+  }
+
+  static get() {
+    let list;
+    const data = localStorage.getItem('memory');
+    if (!data) {
+      list = [];
+    } else {
+      list = JSON.parse(data);
+    }
+    return list;
+  }
+
+  static add(book) {
+    const list = See.get();
+    list.push(book);
+    localStorage.setItem('memory', JSON.stringify(list));
+  }
+
+  static delete(writer) {
+    const list = See.get();
+
+    list.forEach((book, index) => {
+      if (book.author === writer) {
+        list.splice(index, 1);
+      }
+    });
+    localStorage.setItem('memory', JSON.stringify(list));
+  }
 }
 
-document.addEventListener('DOMContentLoaded', See.displayBooks);
-//adding a book
-document.querySelector('#form').addEventListener('submit', (e)=>{
-    e.preventDefault();
-    const title = document.querySelector('#title').value
-    const author = document.querySelector('#author').value
+document.addEventListener('DOMContentLoaded', See.displayAll);
 
-//instatiate new book
-const book= new Book(title, author);
-//add book to see
-See.addBookToList(book);
+// adding a book
+document.querySelector('#form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const title = document.querySelector('#title').value;
+  const author = document.querySelector('#author').value;
 
+  const book = new See(title, author);
+
+  See.display(book);
+  See.add(book);
 });
 
+// removing a book
 document.querySelector('.books').addEventListener('click', (e) => {
-    // Remove book
-    See.removeBook(e.target);
-    
-  });
-  
+  See.removeBook(e.target);
+  const writer = e.target.previousElementSibling.textContent;
+  See.delete(writer);
+});
